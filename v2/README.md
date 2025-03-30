@@ -1,14 +1,13 @@
-# Version 1
+# Version 2
 
-## Team Management
+## Task Management
 
 - Seprated the Project Management Module of the Project Manger.
-- Project Manager can See the Team.
-- Project Manager can Create the Team
-- Project Manager can Delete the Team
-- Project Manager can Update the Team.
-- Project Manger can Assign the project to a team.
-- Project Manager can UnAssign a project from a team.
+- Project Manager can See the Task.
+- Project Manager can Create the Task
+- Project Manager can Delete the Task
+- Project Manager can Update the Task.
+- Project Manger can Assign the project and team to a Task.
 
 ## Folder structure for Pages
 
@@ -28,6 +27,11 @@
                EditTeam/[teamId]page.tsx
                ManageTeams/page.tsx
                TeamProjects/[teamId]/page.tsx
+            taskManagementData
+               CreateSpecifiedTask/[projectId]/page.tsx
+               CreateTask/page.tsx
+               ManageTasks/[projectID]/updateTask/[projectId]/[taskId]/page.tsx/pages.tsx
+               ProjectTasks/[projectID]/updateTask[taskId]/page.tsx/pages.tsx
 
 ### API routes
 
@@ -51,10 +55,20 @@
                getTeams/route.ts
                getTeamsData/route.ts
                unassignProject/route.ts
+            taskManagementData
+               assignTask/[projectId]/route.ts
+               createSpecifiedTask/route.ts
+               getProjects/route.ts
+               getProjectTasks[projectId]/route.ts
+               getTaskDetails[taskId]/route.ts
+               getTasks/route.ts
+               getTeamMembers/[projectId]/route.ts
+               getTeams/route.ts
+               markTaskCompleted/[taskId]/route.ts
+               markTaskPending/[taskId]/route.ts
+               updateTask/route.ts
 
-## Incomplete Sections
+## Fixes
 
-- The further more Integration of the projects and teams with the task is due.
-- Integration of the tasks with the Projects will be done afterwards.
-- Other then that all modules of the Team Management are complete.
-- Some more additional details will be shown on ManageProject Page and ManageTeams Page (Team details if project is assigned).This will be done in v3.
+- Now at the Time of assigning Task all team Leader and Projec Manager will use User email instead of Userid.
+- Same on oher related pages the UserId is replaced with email of the User
